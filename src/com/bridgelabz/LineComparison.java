@@ -1,5 +1,6 @@
-/*Use Case 2 :- As a fan of geometry, I want to check equality of two lines based on the end points,
-   So that I know when two lines are the equal.
+/*Use Case 3 :- As a fan of geometry, I want to check compare two lines based on the end points, So that I know
+one line is equal, greater or less than the other line.
+- Using Java compareTo method to compare 2 Lengths is preferable.
  - Using Java equals method to check equality of 2 Lengths is preferable.*/
 package com.bridgelabz;
 
@@ -45,5 +46,15 @@ public class LineComparison {
         if (length1.equals(length2)) System.out.println("Both lines are equal");
 
         else System.out.println("Both lines are not equal");
+
+//        - Using Java compareTo method to compare 2 Lengths
+        int res = length1.compareTo(length2);
+        if (res == 0) {
+            System.out.println("line 1 and line 2 are equal in length");
+        } else if (res > 0) {
+            System.out.println("Line 1 is greater in length than line 2");
+        } else {
+            System.out.println("Line 1 is lesser  in length than line 2");
+        }
     }
 }

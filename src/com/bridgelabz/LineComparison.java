@@ -1,6 +1,6 @@
-/*Use Case 1 As a fan of geometry, I want to model a line based on a point consisting of (x, y) co-ordinates
-using the Cartesian system,so that I can calculate its length.
-        - A Length as 2 Points (x1, y1) and (x2, y2) - Length of a Line = sqrt( (x2 - x1) ^ 2 + (y2 - y1) ^ 2)*/
+/*Use Case 2 :- As a fan of geometry, I want to check equality of two lines based on the end points,
+   So that I know when two lines are the equal.
+ - Using Java equals method to check equality of 2 Lengths is preferable.*/
 package com.bridgelabz;
 
 import java.util.Scanner;
@@ -25,7 +25,25 @@ public class LineComparison {
         System.out.println("Enter the value of Y2 in line 1 : ");
         double y2 = scanner.nextDouble();
 
-        double length1 = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
+        // input co=ordinate of line 2
+        System.out.println("Enter the value of a1 in line 2 : ");
+        double a1 = scanner.nextDouble();
+        System.out.println("Enter the value of b1 in line 2 : ");
+        double b1 = scanner.nextDouble();
+        System.out.println("Enter the value of a2 in line 2 : ");
+        double a2 = scanner.nextDouble();
+        System.out.println("Enter the value of b2 in line 2 : ");
+        double b2 = scanner.nextDouble();
+
+        Double length1 = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
         System.out.println("The length of line 1 is : " + length1);
+
+        Double length2 = Math.sqrt(Math.pow((a2 - a1),2) + Math.pow((b2 - b1),2));
+        System.out.println("The length of line 2 is : " + length2);
+
+//        Using Java equals method to check equality of 2 Lengths
+        if (length1.equals(length2)) System.out.println("Both lines are equal");
+
+        else System.out.println("Both lines are not equal");
     }
 }

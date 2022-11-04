@@ -1,12 +1,20 @@
-/*Use Case 3 :- As a fan of geometry, I want to check compare two lines based on the end points, So that I know
+/*Use Case 4 :- As a fan of geometry, I want to check compare two lines based on the end points, So that I know
 one line is equal, greater or less than the other line.
 - Using Java compareTo method to compare 2 Lengths is preferable.
- - Using Java equals method to check equality of 2 Lengths is preferable.*/
+ - Using Java equals method to check equality of 2 Lengths is preferable.
+ -Using OOPS concept*/
 package com.bridgelabz;
 
 import java.util.Scanner;
 
-public class LineComparison {
+class Calculation{
+    public static Double length(double x1, double y1, double x2, double y2){
+        Double length = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
+        return length;
+    }
+}
+
+public class LineComparison extends Calculation{
     public static void main(String[] args) {
 
         System.out.println("""
@@ -36,10 +44,10 @@ public class LineComparison {
         System.out.println("Enter the value of b2 in line 2 : ");
         double b2 = scanner.nextDouble();
 
-        Double length1 = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
+        Double length1 = length(x1, y1, x2, y2);
         System.out.println("The length of line 1 is : " + length1);
 
-        Double length2 = Math.sqrt(Math.pow((a2 - a1),2) + Math.pow((b2 - b1),2));
+        Double length2 = length(a1, b1, a2, b2);
         System.out.println("The length of line 2 is : " + length2);
 
 //        Using Java equals method to check equality of 2 Lengths
